@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "author": "@alx.skryabin",
+  "description": "nodeJs with socket app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix client",
+    "dev:all": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "nodeJS",
+    "socket"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.14"
+  }
+}

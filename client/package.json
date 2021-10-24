@@ -1,0 +1,28 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "author": "@alx.skryabin",
+  "description": "socket",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "webpack serve --open",
+    "build": "webpack"
+  },
+  "keywords": [
+    "socket",
+    "front"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.4.0",
+    "html-webpack-plugin": "^5.4.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
