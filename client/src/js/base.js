@@ -1,6 +1,6 @@
 const template = () => {
   return `
-    <h1>My Express App!</h1>
+    <h1>Express | Socket App!</h1>
      <div class="menu">
       <span>MENU — </span>
       <a href="/">Страница 1</a>
