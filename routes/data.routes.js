@@ -21,7 +21,7 @@ router.get('/get/:code', (req, res) => {
   try {
     const {code} = req.params
 
-    if(!LIST[code]) {
+    if (!LIST[code]) {
       throw new Error(`Region not found: ${code}`)
     }
 

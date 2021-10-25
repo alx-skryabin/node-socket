@@ -5,4 +5,6 @@ body {
 
 .app {
     color: #fff;
+    text-align: center;
+    margin: 30px;
 }
