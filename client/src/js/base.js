@@ -1,20 +1,36 @@
-const template = () => {
+const menu = () => {
   return `
-    <h1>Express | Socket App!</h1>
-     <div class="menu">
+    <div class="menu">
       <span>MENU — </span>
       <a href="/">Страница 1</a>
-      <a href="second.html">Страница 2</a>
-    </div>
+      <a href="/">Страница 2</a>
+    </div>`
+}
+
+const querySection = () => {
+  return `
     <div class="button">
-      <!--<button id="btn1">Первый</button>-->
-      <!--<button id="btn2">Второй</button>-->
+      <button id="post">POST</button>
+      <button id="get">GET</button>
     </div>
+    <code class="msg" id="output-query">Result query will be printed here</code>`
+}
+
+const socketSection = () => {
+  return `
     <div class="form">
-      <input type="text" id="field" placeholder="Сообщение...">
-      <button id="send">Отправить</button>
+      <input type="text" id="field" placeholder="Message...">
+      <button id="send">Send</button>
     </div>
-    <div class="msg">The last message will be printed here</div>
+    <div class="msg" id="output-msg">The last message will be printed here</div>`
+}
+
+const template = () => {
+  return `
+    <!--${menu()}-->
+    <h1>Express | Socket App!</h1>
+    ${socketSection()}
+    ${querySection()}
   `
 }
 

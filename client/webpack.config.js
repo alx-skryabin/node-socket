@@ -16,6 +16,7 @@ module.exports = {
   },
   devServer: {
     static: './build',
+    port: 8090
   },
   devtool: 'source-map',
   module: {

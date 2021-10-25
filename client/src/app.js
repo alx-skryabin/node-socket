@@ -1,16 +1,14 @@
-import './styles/index.css'
-import {getData, setData} from './js/query'
-import {addEventForm, emitSocket} from './js/socket'
+import {initEventQuery} from './js/query'
+import {initEventSocket} from './js/socket'
 import {template} from './js/base'
+import './styles/index.css'
 
 document.querySelector('.app')
   .innerHTML = template()
 
 
-// init socket work
-emitSocket()
-addEventForm()
+// init socket
+initEventSocket()
 
 // init express query
-getData(26)
-setData('NYC')
+initEventQuery()

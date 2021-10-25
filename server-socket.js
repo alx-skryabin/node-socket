@@ -6,7 +6,7 @@ const app = express()
 const httpServer = createServer(app)
 const io = new Server(httpServer, {
   cors: {
-    origin: 'http://localhost:8081',
+    origin: '*', // allow domain ex: http://localhost:8080
   }
 });
 
