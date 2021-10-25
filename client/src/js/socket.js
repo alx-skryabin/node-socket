@@ -1,6 +1,6 @@
 import {io} from 'socket.io-client'
 
-const URI = 'http://localhost:3030'
+const URI = 'http://localhost:3000'
 const socket = io(URI, {})
 
 const emitSocket = () => {
