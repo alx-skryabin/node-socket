@@ -3,8 +3,70 @@ body {
     background: #223;
 }
 
-.app {
+h1 {
     color: #fff;
     text-align: center;
     margin: 30px;
+    font-size: 22px;
+}
+
+.button,
+.menu {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu a {
+    color: #959bff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .1);
+    transition: .3s;
+}
+
+.menu span {
+    color: #cecece;
+    opacity: .2;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, .15);
+    transition: .3s;
+}
+
+.button button {
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.form {
+    text-align: center;
+}
+
+.form input {
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    color: #ccc;
+}
+
+.form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.msg {
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: #ccc;
+    padding: 10px;
+    text-align: center;
 }
