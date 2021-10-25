@@ -1,30 +1,48 @@
 const {Router} = require('express')
 const router = Router()
 
-router.get('/get/:code', async (req, res) => {
-  try {
-    const list = {
-      '77': 'Москва',
-      '98': 'Санкт-Петербург',
-      '26': 'Ставропольский край',
-    }
-    const data = list[req.params.code]
+const LIST = {
+  '98': 'Санкт-Петербург',
+  '77': 'Москва',
+  '23': 'Краснодарский край',
+  '26': 'Ставропольский край',
+  '13': 'Республика мордовия'
+}
+const DATA = {name: 'Alex', age: 26}
 
-    res.status(201).json({message: 'Success query!', data})
+const error = e => {
+  return {
+    message: 'Error query',
+    desc: e.message
+  }
+}
+
+router.get('/get/:code', (req, res) => {
+  try {
+    const {code} = req.params
+
+    if(!LIST[code]) {
+      throw new Error(`Region not found: ${code}`)
+    }
+
+    res.status(201).json({message: 'Success query', data: LIST[code]})
   } catch (e) {
-    res.status(500).json({message: 'Error query!'})
+    res.status(500).json(error(e))
   }
 })
 
-router.post('/set', async (req, res) => {
+router.post('/set', (req, res) => {
   try {
-    // todo Не могу получить данные запроса
-    console.log('body:', req.body)
-    const data = {name: 'Alex', age: 26}
+    if (!req.body.city) {
+      return res.status(500).send('Not exist param: `city`')
+    }
 
-    res.status(200).json({message: 'Success query!', data: {...data, ...req.body}})
+    res.status(200).json({
+      message: 'Success query',
+      data: {...DATA, ...req.body}
+    })
   } catch (e) {
-    res.status(500).json({message: 'Error query!!'})
+    res.status(500).json(error(e))
   }
 })
 
