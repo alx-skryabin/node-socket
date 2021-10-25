@@ -1,16 +1,30 @@
 const express = require('express')
+const {createServer} = require('http')
+const {Server} = require('socket.io');
+
 const app = express()
-const http = require('http').createServer(app)
-const io = require('socket.io')(http)
+const httpServer = createServer(app)
+const io = new Server(httpServer, {
+  cors: {
+    origin: 'http://localhost:8081',
+  }
+});
+
 const PORT = 3030
 
-// Support JSON format on server
-app.use(express.json({extended: true}))
+io.on('connection', socket => {
+  socket.on('chat message', data => {
+    io.emit('chat message', {
+      message: data.message
+    })
+  })
+})
+
 
 const socket = () => {
   return {
     start: () => {
-      http.listen(PORT, () => {
+      httpServer.listen(PORT, () => {
         console.log(`Socket has been started on port... ${PORT}`)
       })
     }
