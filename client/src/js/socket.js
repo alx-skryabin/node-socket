@@ -1,5 +1,6 @@
 import {io} from 'socket.io-client'
 
+// todo insert in config dinamic
 const URI = 'http://localhost:3000'
 const socket = io(URI, {})
 

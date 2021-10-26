@@ -1,3 +1,4 @@
+// todo insert in config dinamic
 const URI = 'http://localhost:3000'
 
 async function getData(region) {
