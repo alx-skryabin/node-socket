@@ -1,1 +1,0 @@
-web: npm install --prefix client; npm run build --prefix client; cross-env NODE_ENV=production node index.js
