@@ -656,7 +656,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "initEventQuery": () => (/* binding */ initEventQuery)
 /* harmony export */ });
 // todo insert in config dinamic
-const URI = 'http://localhost:3000'
+const URI = 'https://node-socket-express.herokuapp.com'
 
 async function getData(region) {
   return await fetch(`${URI}/api/data/get/${region}`, {
@@ -721,7 +721,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // todo insert in config dinamic
-const URI = 'http://localhost:3000'
+const URI = 'https://node-socket-express.herokuapp.com'
 const socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_0__.io)(URI, {})
 
 const emitSocket = () => {
