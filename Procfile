@@ -1,1 +1,1 @@
-web: npm run client:install; npm run client:build; node index.js
+web: npm client:install; npm client:build; node index.js
