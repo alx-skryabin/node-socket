@@ -6,13 +6,21 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 
-app.use('/', express.static(path.join(__dirname, 'static')))
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'static', 'index.html'))
-})
-app.get('/two', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'static', 'index2.html'))
-})
+// app.use('/', express.static(path.join(__dirname, 'static')))
+// app.get('/', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'static', 'index.html'))
+// })
+// app.get('/two', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'static', 'index2.html'))
+// })
+
+// If mode = 'production', any request send to static builded 'index.html'
+if (process.env.NODE_ENV === 'production') {
+  app.use('/', express.static(path.join(__dirname, 'client', 'build')))
+  app.get('*', (req,res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
 
 
 /***For Express API***/
