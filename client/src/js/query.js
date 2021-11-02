@@ -1,5 +1,5 @@
 // todo insert in config dinamic
-const URI = 'http://localhost:3000'
+const URI = 'https://node-socket-express.herokuapp.com'
 
 async function getData(region) {
   return await fetch(`${URI}/api/data/get/${region}`, {
