@@ -1,8 +1,7 @@
 import {io} from 'socket.io-client'
+import {defineURI} from './utils'
 
-// todo insert in config dinamic
-const URI = 'http://localhost:3000'
-const socket = io(URI, {})
+const socket = io(defineURI(), {})
 
 const emitSocket = () => {
   const $msg = document.querySelector('#output-msg')
@@ -29,7 +28,7 @@ const initEventSocket = () => {
 
   $submit.addEventListener('click', () => sendMsg($input))
 
-  $input.addEventListener('keypress', (e) => {
+  $input.addEventListener('keypress', e => {
     if (e.key === 'Enter') sendMsg($input)
   })
 }

@@ -1,5 +1,6 @@
-// todo insert in config dinamic
-const URI = 'http://localhost:3000'
+import {defineURI} from './utils'
+
+const URI = defineURI()
 
 async function getData(region) {
   return await fetch(`${URI}/api/data/get/${region}`, {
