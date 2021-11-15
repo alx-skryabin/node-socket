@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "1.0.1",
   "author": "@alx.skryabin",
-  "description": "socket",
+  "description": "socket, api",
   "main": "src/app.js",
   "scripts": {
     "dev": "webpack serve --open",
@@ -10,7 +10,7 @@
   },
   "keywords": [
     "socket",
-    "front"
+    "javaScript"
   ],
   "license": "ISC",
   "devDependencies": {
